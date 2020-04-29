@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "9e5a29c8-3214-4f26-b92c-66aee31c7022",
+		"name": "Jira",
+		"description": "Learning api testing through postman ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add user functionality",
+			"item": [
+				{
+					"name": "createNewUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kumar@411",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pezalatechnologies",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Nitesh\",\r\n\t\"password\": \"kumar@411\",\r\n\t\"emailAddress\": \"niteshkumar411@gmail.com\",\r\n\t\"displayName\": \"Nitesh411\",\r\n\t\"applicationKeys\": [\r\n\t\t\"jira-core\"\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/api/2/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"user"
+							]
+						},
+						"description": "Creating new user"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User Created",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kumar@411",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pezalatechnologies",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/rest/api/2/user?key={{Key}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"user"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Key}}"
+								}
+							]
+						},
+						"description": "Verify user created"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/rest/api/2/user?key={{Key}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"user"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Key}}"
+								}
+							]
+						},
+						"description": "Delete user successfully"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User deleted",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kumar@411",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pezalatechnologies",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/rest/api/2/user?key={{Key}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"user"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{Key}}"
+								}
+							]
+						},
+						"description": "Verify user deleted successfully"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
